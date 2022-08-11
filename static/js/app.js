@@ -59,8 +59,8 @@ function filterTable(filters) {
     // 9. Loop through all of the filters and keep any data that
     // matches the filter values
   for (let type in filters){
-    // filteredData=filteredData.filter(row.type===filters[type]);
-    filteredData=filteredData.filter(row=>row.city===filters[type]||row.state===filters[type]||row.country===filters[type]||row.shape===filters[type]);
+    filteredData=filteredData.filter(row=>row[type]===filters[type])
+    // filteredData=filteredData.filter(row=>row.city===filters[type]||row.state===filters[type]||row.country===filters[type]||row.shape===filters[type]);
   }
     // 10. Finally, rebuild the table using the filtered data
     buildTable(filteredData)
